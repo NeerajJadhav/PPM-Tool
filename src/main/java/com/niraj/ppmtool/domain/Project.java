@@ -1,6 +1,8 @@
 package com.niraj.ppmtool.domain;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
@@ -24,9 +26,11 @@ public class Project {
     private Date startDate;
     @JsonFormat(pattern = "yyyy-mm-dd")
     private Date endDate;
-    @JsonFormat(pattern = "yyyy-mm-dd")
+    @CreationTimestamp
+    @JsonFormat(pattern = "yyyy-mm-dd hh:mm:ss")
     private Date created_at;
-    @JsonFormat(pattern = "yyyy-mm-dd")
+    @UpdateTimestamp
+    @JsonFormat(pattern = "yyyy-mm-dd hh:mm:ss")
     private Date updated_at;
 
     public Project() {
