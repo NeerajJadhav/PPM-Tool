@@ -16,10 +16,10 @@ public class Project {
     private Long id;
     @NotBlank(message = "Project Name is required")
     private String name;
-    @NotBlank(message = "Project Identifier is required")
+    @NotBlank(message = "Project identifier is required")
     @Size(min = 4, max = 5, message = "Please use 4-5 characters")
     @Column(updatable = false, unique = true)
-    private String Identifier;
+    private String identifier;
     @NotBlank(message = "Project description is required")
     private String description;
     @JsonFormat(pattern = "yyyy-mm-dd")
@@ -64,11 +64,11 @@ public class Project {
     }
 
     public String getIdentifier() {
-        return Identifier;
+        return identifier;
     }
 
     public void setIdentifier(String identifier) {
-        Identifier = identifier;
+        this.identifier = identifier;
     }
 
     public String getDescription() {
